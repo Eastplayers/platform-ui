@@ -7,6 +7,7 @@ const Button: FC<ButtonProps> = ({
   children,
   variant = ButtonVariants.PRIMARY,
   size = ButtonSizes.MEDIUM,
+  ...rest
 }) => {
   return (
     <button
@@ -14,6 +15,7 @@ const Button: FC<ButtonProps> = ({
         [`pui-btn-${variant}`]: !!variant,
         [`pui-btn-${size}`]: !!size,
       })}
+      {...rest}
     >
       {children}
     </button>

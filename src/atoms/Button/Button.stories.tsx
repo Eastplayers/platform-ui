@@ -9,6 +9,7 @@ export const Template: FC<ButtonProps> = (props) => {
 Template.args = {
   variant: ButtonVariants.PRIMARY,
   size: ButtonSizes.MEDIUM,
+  disabled: false,
 };
 
 export default {
@@ -22,6 +23,8 @@ export default {
       options: Object.values(ButtonSizes),
       control: { type: "radio" },
     },
-    disabled: false,
+    disabled: {
+      control: "boolean",
+    },
   },
 };

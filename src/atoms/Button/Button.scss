@@ -12,6 +12,10 @@
   cursor: pointer;
   transition: all 0.25s ease-in-out;
 
+  &:disabled {
+    cursor: not-allowed;
+  }
+
   &.pui-btn-big {
     height: 48px;
     font-size: 16px;
