@@ -1,25 +1,26 @@
-@import url("../../index.scss");
+@import "../../styles/main.scss";
 
 .pui-btn {
   $self: &;
   border: none;
-  height: 40px;
-  padding: 0 12px;
+  height: pxToRem(40);
+  padding: 0 pxToRem(12);
   font-weight: 600;
-  font-size: 14px;
-  line-height: 17px;
-  border-radius: 8px;
+  font-size: pxToRem(14);
+  line-height: pxToRem(17);
+  border-radius: pxToRem(8);
   cursor: pointer;
   transition: all 0.25s ease-in-out;
+  will-change: background;
 
   &:disabled {
     cursor: not-allowed;
   }
 
   &.pui-btn-big {
-    height: 48px;
-    font-size: 16px;
-    line-height: 19px;
+    height: pxToRem(48);
+    font-size: pxToRem(16);
+    line-height: pxToRem(19);
   }
 
   &.pui-btn-primary {

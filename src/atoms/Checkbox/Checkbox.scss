@@ -1,0 +1,115 @@
+@import "../../styles/main.scss";
+
+$checkbox-medium-size: 16;
+$checkbox-big-size: 20;
+$checkmark-width: 1.7;
+$spacing-between-input-and-label: 8;
+
+@mixin generate-checkmark($small-height, $big-height) {
+  .pui-checkbox-checkmark {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 40%;
+      bottom: 30%;
+      display: inline-block;
+      width: pxToRem($checkmark-width);
+      border-radius: pxToRem(20);
+      background: var(--white);
+      transform-origin: 50% calc(100% - 0.4px);
+      opacity: 0;
+      transition: all 0.25s ease-in-out;
+    }
+    &::before {
+      height: $big-height;
+      transform: rotate(35deg);
+    }
+    &::after {
+      height: $small-height;
+      transform: rotate(-55deg);
+    }
+  }
+}
+
+@mixin generate-checkbox($size) {
+  @if $size == $checkbox-medium-size {
+    font-size: pxToRem(14);
+    line-height: pxToRem($size);
+  } @else {
+    font-size: pxToRem(16);
+    line-height: pxToRem($size);
+  }
+  padding-left: pxToRem($spacing-between-input-and-label + $size);
+  .pui-checkbox-checkmark-container {
+    width: pxToRem($size);
+    height: pxToRem($size);
+    margin-top: pxToRem(-1.5);
+    &::after {
+      width: pxToRem($size * 2.2);
+      height: pxToRem($size * 2.2);
+    }
+    @if $size == $checkbox-medium-size {
+      border-radius: pxToRem(2);
+    } @else {
+      border-radius: pxToRem(4);
+    }
+  }
+  @if $size == $checkbox-medium-size {
+    @include generate-checkmark(pxToRem(5), pxToRem(9));
+  } @else {
+    @include generate-checkmark(pxToRem(6), pxToRem(10));
+  }
+}
+
+.pui-checkbox {
+  width: fit-content;
+  display: block;
+  position: relative;
+  margin-bottom: pxToRem(12);
+  cursor: pointer;
+  line-height: 150%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all 0.25s ease-in-out;
+  white-space: pre-wrap;
+  will-change: color;
+
+  &.pui-checkbox-medium {
+    @include generate-checkbox($checkbox-medium-size);
+  }
+
+  &.pui-checkbox-big {
+    @include generate-checkbox($checkbox-big-size);
+  }
+
+  .pui-checkbox-input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    cursor: pointer;
+    &:checked ~ .pui-checkbox-checkmark-container {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      &::after {
+        background-color: var(--primary);
+      }
+      .pui-checkbox-checkmark {
+        &::after,
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .pui-checkbox-checkmark-container {
+    position: absolute;
+    left: 0;
+    border: 1px solid var(--grey-100);
+    transition: all 0.25s ease-in-out;
+  }
+}
