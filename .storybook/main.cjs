@@ -6,6 +6,7 @@ module.exports = {
     "@storybook/addon-interactions",
     "@storybook/addon-controls",
     "storybook-addon-sass-postcss",
+    "storybook-dark-mode",
   ],
   framework: "@storybook/react",
 };

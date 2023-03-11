@@ -1,7 +1,14 @@
-import { ReactNode } from "react";
+import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from "react";
 
-export interface ButtonProps {
+export interface ButtonProps
+  extends DetailedHTMLProps<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {
   children?: ReactNode;
+  size?: ButtonSizes;
+  variant?: ButtonVariants;
+  disabled?: boolean;
 }
 
 export enum ButtonSizes {
