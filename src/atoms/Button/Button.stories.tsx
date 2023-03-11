@@ -1,19 +1,27 @@
-import React, { FC } from "react";
-import Button from "./Button";
-import { ButtonProps, ButtonSizes, ButtonVariants } from "./Button.types";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
+import React from "react";
+import { default as ButtonComponent } from "./Button";
+import { ButtonSizes, ButtonVariants } from "./Button.types";
 
-export const Template: FC<ButtonProps> = (props) => {
-  return <Button {...props}>Button</Button>;
+export const Button: ComponentStory<typeof ButtonComponent> = (args) => {
+  return <ButtonComponent {...args}>Button</ButtonComponent>;
 };
 
-Template.args = {
-  variant: ButtonVariants.PRIMARY,
-  size: ButtonSizes.MEDIUM,
-  disabled: false,
+Button.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+
+  await userEvent.click(canvas.getByRole("button"));
 };
 
 export default {
-  title: "Atoms/Button",
+  title: "Platform UI/Atoms/Button",
+  component: ButtonComponent,
+  args: {
+    variant: ButtonVariants.PRIMARY,
+    size: ButtonSizes.MEDIUM,
+    disabled: false,
+  },
   argTypes: {
     variant: {
       options: Object.values(ButtonVariants),
@@ -26,5 +34,6 @@ export default {
     disabled: {
       control: "boolean",
     },
+    onClick: { action: "clicked" },
   },
-};
+} as ComponentMeta<typeof ButtonComponent>;
