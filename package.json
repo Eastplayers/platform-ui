@@ -1,0 +1,70 @@
+{
+  "name": "platform-ui",
+  "version": "1.0.0",
+  "description": "Platform UI",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+    "build:tsc": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "yarn build",
+    "version": "yarn format && git add -A src",
+    "postversion": "git push && git push --tags",
+    "sb": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "keywords": [
+    "Platform",
+    "UI"
+  ],
+  "author": "Eastplayers <hello@eastplayers.io> (https://github.com/Eastplayers)",
+  "license": "ISC",
+  "repository": "https://github.com/Eastplayers/platform-ui",
+  "bugs": {
+    "url": "https://github.com/Eastplayers/platform-ui/issues"
+  },
+  "homepage": "https://github.com/Eastplayers/platform-ui#readme",
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-terser": "^0.4.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-controls": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/builder-webpack4": "^6.5.16",
+    "@storybook/manager-webpack4": "^6.5.16",
+    "@storybook/react": "^6.5.16",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/react": "^18.0.28",
+    "babel-loader": "^8.3.0",
+    "eslint": "^8.34.0",
+    "fs": "^0.0.1-security",
+    "prettier": "^2.8.4",
+    "rollup": "^3.15.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-scss": "^4.0.0",
+    "storybook-addon-sass-postcss": "^0.1.3",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.9.5"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "dependencies": {
+    "@rollup/plugin-replace": "^5.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "type": "module",
+  "moduleResolution": "node"
+}
