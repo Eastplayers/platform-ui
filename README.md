@@ -13,9 +13,9 @@ npm install platform-ui
 ## Usage
 
 ```js
-import { Button } from "edgee-tracking";
+import { Button } from "platform-ui";
 
-<Button />
+<Button />;
 ```
 
 ## Contributing
