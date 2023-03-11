@@ -1,3 +1,64 @@
+@import url("../../index.scss");
+
 .pui-btn {
+  $self: &;
   border: none;
+  height: 40px;
+  padding: 0 12px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+
+  &.pui-btn-big {
+    height: 48px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &.pui-btn-primary {
+    background: var(--primary);
+    color: var(--white);
+
+    &:hover {
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        var(--primary);
+    }
+
+    &:disabled {
+      background: var(--grey-400);
+      color: var(--grey-100);
+    }
+  }
+
+  &.pui-btn-secondary {
+    border: 1.5px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+
+    &:hover {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    &:disabled {
+      border-color: var(--grey-400);
+      color: var(--grey-400);
+    }
+  }
+
+  &.pui-btn-ghost {
+    color: var(--primary);
+    background: transparent;
+
+    &:hover {
+      color: var(--primary-dark);
+    }
+
+    &:disabled {
+      color: var(--grey-400);
+    }
+  }
 }

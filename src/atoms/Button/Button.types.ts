@@ -12,12 +12,12 @@ export interface ButtonProps
 }
 
 export enum ButtonSizes {
-  BIG = "BIG",
-  MEDIUM = "MEDIUM",
+  BIG = "big",
+  MEDIUM = "medium",
 }
 
 export enum ButtonVariants {
-  PRIMARY = "PRIMARY",
-  SECONDARY = "SECONDARY",
-  GHOST = "GHOST",
+  PRIMARY = "primary",
+  SECONDARY = "secondary",
+  GHOST = "ghost",
 }
