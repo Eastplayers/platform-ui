@@ -4,6 +4,7 @@ export interface TextProps {
   children?: ReactNode;
   className?: string;
   type?: TextTypes;
+  decoration?: TextDecorations;
 }
 
 export enum TextTypes {
@@ -15,4 +16,10 @@ export enum TextTypes {
   BODY_1 = "body-1",
   BODY_2 = "body-2",
   BODY_3 = "body-3",
+}
+
+export enum TextDecorations {
+  NONE = "none",
+  UNDERLINE = "underline",
+  LINE_THROUGH = "line-through",
 }

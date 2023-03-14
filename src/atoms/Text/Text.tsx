@@ -7,9 +7,12 @@ const Text: FC<TextProps> = ({
   children,
   type = TextTypes.BODY_2,
   className,
+  decoration,
 }) => {
   return (
-    <div className={classNames("pui-text", type, className)}>{children}</div>
+    <div className={classNames("pui-text", type, decoration, className)}>
+      {children}
+    </div>
   );
 };
 

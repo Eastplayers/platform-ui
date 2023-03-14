@@ -5,7 +5,21 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/addon-controls",
-    "storybook-addon-sass-postcss",
+    {
+      name: "storybook-addon-sass-postcss",
+      options: {
+        rule: {
+          test: /\.(scss|sass)$/i,
+        },
+        loadSassAfterPostCSS: true,
+        postcssLoaderOptions: {
+          implementation: require("postcss"),
+        },
+        sassLoaderOptions: {
+          implementation: require("sass"),
+        },
+      },
+    },
     "storybook-dark-mode",
   ],
   framework: "@storybook/react",

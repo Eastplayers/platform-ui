@@ -5,6 +5,8 @@
   color: var(--text-primary);
   font-weight: 400;
   letter-spacing: 0px;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
 
   &.headline-4 {
     font-weight: 600;
@@ -49,5 +51,12 @@
   &.body-3 {
     font-size: pxToRem(12);
     line-height: pxToRem(15);
+  }
+
+  $decorations: none, underline, line-through;
+  @each $decoration in $decorations {
+    &.#{$decoration} {
+      text-decoration: $decoration;
+    }
   }
 }
