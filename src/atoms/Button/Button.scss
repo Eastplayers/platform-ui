@@ -12,6 +12,7 @@
   cursor: pointer;
   transition: all 0.25s ease-in-out;
   will-change: background;
+  outline: none;
 
   &:disabled {
     cursor: not-allowed;
