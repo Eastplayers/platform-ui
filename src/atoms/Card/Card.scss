@@ -1,0 +1,7 @@
+@import "../../styles/main.scss";
+
+.pui-card {
+  background: var(--card-bg);
+  box-shadow: var(--card-box-shadow);
+  border-radius: pxToRem(8);
+}
