@@ -1,0 +1,53 @@
+@import "../../styles/main.scss";
+
+.pui-text {
+  font-family: "Inter", sans-serif;
+  color: var(--text-primary);
+  font-weight: 400;
+  letter-spacing: 0px;
+
+  &.headline-4 {
+    font-weight: 600;
+    font-size: pxToRem(24);
+    line-height: pxToRem(29);
+  }
+
+  &.headline-5 {
+    font-weight: 600;
+    font-size: pxToRem(20);
+    line-height: pxToRem(24);
+  }
+
+  &.title-1 {
+    font-weight: 600;
+    font-size: pxToRem(18);
+    line-height: pxToRem(22);
+  }
+
+  &.title-2 {
+    font-weight: 600;
+    font-size: pxToRem(16);
+    line-height: pxToRem(19);
+  }
+
+  &.title-3 {
+    font-weight: 600;
+    font-size: pxToRem(14);
+    line-height: pxToRem(17);
+  }
+
+  &.body-1 {
+    font-size: pxToRem(16);
+    line-height: pxToRem(19);
+  }
+
+  &.body-2 {
+    font-size: pxToRem(14);
+    line-height: pxToRem(17);
+  }
+
+  &.body-3 {
+    font-size: pxToRem(12);
+    line-height: pxToRem(15);
+  }
+}
