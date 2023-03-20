@@ -20,7 +20,13 @@ export default [
     plugins: [
       json(),
       typescript({
-        exclude: ["**/__tests__", "**/*.test.tsx", "**/*.stories.tsx"],
+        exclude: [
+          "**/__tests__",
+          "**/*.test.tsx",
+          "**/*.stories.tsx",
+          "**/jest-setup.ts",
+          "**/snapTest.tsx",
+        ],
       }),
       resolve(),
       commonjs(),
@@ -30,7 +36,7 @@ export default [
       terser(),
       scss({
         fileName: "bundle.css",
-        sass: require("sass"),
+        // sass: require("sass"),
         outputStyle: "compressed",
       }),
     ],
