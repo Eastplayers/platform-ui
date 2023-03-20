@@ -10,7 +10,7 @@
     "test:coverage": "npm test -- --noStackTrace --coverage --watchAll=false --verbose=true --testTimeout=20000",
     "test:staged": "react-scripts test --maxWorkers=4 --noStackTrace --findRelatedTests --watchAll=false --verbose=false",
     "view:coverage": "open coverage/lcov-report/index.html",
-    "build": "rollup -c",
+    "build": "rm -rf lib && rollup -c --bundleConfigAsCjs",
     "build:tsc": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",

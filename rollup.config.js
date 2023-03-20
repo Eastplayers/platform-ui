@@ -16,10 +16,12 @@ export default [
       format: "es",
       dir: "lib",
     },
-    external: ["react/jsx-runtime"],
+    external: ["react", "react-dom", "react/jsx-runtime"],
     plugins: [
       json(),
-      typescript(),
+      typescript({
+        exclude: ["**/__tests__", "**/*.test.tsx", "**/*.stories.tsx"],
+      }),
       resolve(),
       commonjs(),
       babel({
@@ -27,7 +29,9 @@ export default [
       }),
       terser(),
       scss({
-        fileName: "main.css",
+        fileName: "bundle.css",
+        sass: require("sass"),
+        outputStyle: "compressed",
       }),
     ],
   },
