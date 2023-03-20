@@ -1,14 +1,9 @@
-import React, { FC } from "react";
-import { ButtonProps, ButtonSizes, ButtonVariants } from "./Button.types";
-import "./Button.scss";
 import classNames from "classnames";
+import { FC } from "react";
+import "./Button.scss";
+import { ButtonProps, ButtonSizes, ButtonVariants } from "./Button.types";
 
-const Button: FC<ButtonProps> = ({
-  children,
-  variant = ButtonVariants.PRIMARY,
-  size = ButtonSizes.MEDIUM,
-  ...rest
-}) => {
+const Button: FC<ButtonProps> = ({ children, variant, size, ...rest }) => {
   return (
     <button
       className={classNames("pui-btn", {
@@ -20,6 +15,11 @@ const Button: FC<ButtonProps> = ({
       {children}
     </button>
   );
+};
+
+Button.defaultProps = {
+  variant: ButtonVariants.PRIMARY,
+  size: ButtonSizes.MEDIUM,
 };
 
 export default Button;

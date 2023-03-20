@@ -8,6 +8,36 @@ exports[`Button snapshot snapshots Should render correctly 1`] = `
       "variant": "primary",
     }
   }
+  1={
+    {
+      "size": "big",
+      "variant": "primary",
+    }
+  }
+  2={
+    {
+      "size": "medium",
+      "variant": "secondary",
+    }
+  }
+  3={
+    {
+      "size": "big",
+      "variant": "secondary",
+    }
+  }
+  4={
+    {
+      "size": "medium",
+      "variant": "ghost",
+    }
+  }
+  5={
+    {
+      "size": "big",
+      "variant": "ghost",
+    }
+  }
   className="pui-btn pui-btn-primary pui-btn-medium"
 />
 `;

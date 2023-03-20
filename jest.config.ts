@@ -4,6 +4,8 @@ const config: Config = {
   verbose: true,
   setupFilesAfterEnv: ["<rootDir>/jest-setup.ts"],
   testEnvironment: "jsdom",
+  coverageDirectory: "coverage",
+  collectCoverage: true,
   coverageThreshold: {
     global: {
       branches: 65,
