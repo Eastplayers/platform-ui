@@ -5,7 +5,6 @@ export interface ButtonProps
     ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
-  children?: ReactNode;
   size?: ButtonSizes;
   variant?: ButtonVariants;
   disabled?: boolean;

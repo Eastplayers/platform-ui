@@ -26,7 +26,9 @@ export default [
         exclude: ["node_modules/**"],
       }),
       terser(),
-      scss(),
+      scss({
+        fileName: "main.css",
+      }),
     ],
   },
 ];

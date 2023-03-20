@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { FC } from "react";
+import { FC } from "react";
 import "./Button.scss";
 import { ButtonProps, ButtonSizes, ButtonVariants } from "./Button.types";
 
