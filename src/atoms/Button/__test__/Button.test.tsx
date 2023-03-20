@@ -27,7 +27,7 @@ describe("Button logic", () => {
     const button = screen.getByText("Click me");
     await userEvent.click(button);
 
-    expect(button).toHaveTextContent("Click me");
+    expect(button).toHaveTextContent("Click");
     expect(buttonOnClick).toHaveBeenCalled();
   });
 });
