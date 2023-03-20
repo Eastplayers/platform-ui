@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1679327973995" clover="3.2.0">
-  <project timestamp="1679327973995" name="All files">
+<coverage generated="1679334446776" clover="3.2.0">
+  <project timestamp="1679334446776" name="All files">
     <metrics statements="25" coveredstatements="25" conditionals="4" coveredconditionals="4" methods="8" coveredmethods="8" elements="37" coveredelements="37" complexity="0" loc="25" ncloc="25" packages="2" files="3" classes="3"/>
     <package name="atoms.Button">
       <metrics statements="14" coveredstatements="14" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
@@ -11,8 +11,8 @@
         <line num="4" count="1" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
       </file>
       <file name="Button.types.ts" path="/Users/phuvietdang/Desktop/Projects/platform-ui/src/atoms/Button/Button.types.ts">
         <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
