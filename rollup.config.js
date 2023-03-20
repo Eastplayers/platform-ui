@@ -11,7 +11,7 @@ export default [
   {
     input: "src/index.tsx",
     output: {
-      name: "edgee-tracking",
+      name: "platform-ui",
       file: pkg.browser,
       format: "es",
       dir: "lib",
