@@ -3,17 +3,17 @@
 ## Installation
 
 ```sh
-yarn add platform-ui
+yarn add @eastplayers/platform-ui
 ```
 
 ```sh
-npm install platform-ui
+npm install @eastplayers/platform-ui
 ```
 
 ## Usage
 
 ```js
-import { Button } from "platform-ui";
+import { Button } from "@eastplayers/platform-ui";
 
 <Button />;
 ```
@@ -24,6 +24,6 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 
 ## License
 
-Copyright © 2022 Eastplayers
+Copyright © 2023 Eastplayers
 
 ISC

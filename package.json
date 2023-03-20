@@ -1,5 +1,5 @@
 {
-  "name": "platform-ui",
+  "name": "@eastplayers/platform-ui",
   "version": "1.0.0",
   "description": "Platform UI",
   "main": "lib/index.js",
@@ -31,11 +31,14 @@
   ],
   "author": "Eastplayers <hello@eastplayers.io> (https://github.com/Eastplayers)",
   "license": "ISC",
-  "repository": "https://github.com/Eastplayers/platform-ui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eastplayers/platform-ui.git"
+  },
   "bugs": {
     "url": "https://github.com/Eastplayers/platform-ui/issues"
   },
-  "homepage": "https://github.com/Eastplayers/platform-ui#readme",
+  "homepage": "https://storybook.eastplayers.io",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
@@ -93,5 +96,9 @@
     "react-test-renderer": "^18.2.0"
   },
   "type": "module",
-  "moduleResolution": "node"
+  "moduleResolution": "node",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  }
 }

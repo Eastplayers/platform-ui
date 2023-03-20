@@ -11,7 +11,7 @@ export default [
   {
     input: "src/index.tsx",
     output: {
-      name: "platform-ui",
+      name: "@eastplayers/platform-ui",
       file: pkg.browser,
       format: "es",
       dir: "lib",
