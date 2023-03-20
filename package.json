@@ -6,6 +6,10 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest --verbose=false",
+    "test:push": "cross-env CI=true react-scripts test --testTimeout=20000",
+    "test:coverage": "npm test -- --noStackTrace --coverage --watchAll=false --verbose=true --testTimeout=20000",
+    "test:staged": "react-scripts test --maxWorkers=4 --noStackTrace --findRelatedTests --watchAll=false --verbose=false",
+    "view:coverage": "open coverage/lcov-report/index.html",
     "build": "rollup -c",
     "build:tsc": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
