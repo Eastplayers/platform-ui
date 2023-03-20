@@ -9,6 +9,7 @@ export interface ButtonProps
   size?: ButtonSizes;
   variant?: ButtonVariants;
   disabled?: boolean;
+  loading?: boolean;
 }
 
 export enum ButtonSizes {
