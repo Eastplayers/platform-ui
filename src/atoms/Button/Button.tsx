@@ -12,6 +12,9 @@ const Button: FC<ButtonProps> = ({ children, variant, size, ...rest }) => {
       })}
       {...rest}
     >
+
+
+      
       {children}
     </button>
   );
