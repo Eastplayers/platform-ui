@@ -1,19 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` 1`] = `
-<button
-  className="pui-btn pui-btn-primary pui-btn-medium"
-/>
-`;
-
-exports[`Button logic snapshots Should render correctly 1`] = `
-<button
-  className="pui-btn pui-btn-primary pui-btn-medium"
-/>
-`;
-
 exports[`Button snapshot snapshots Should render correctly 1`] = `
 <button
+  0={
+    {
+      "size": "medium",
+      "variant": "primary",
+    }
+  }
   className="pui-btn pui-btn-primary pui-btn-medium"
 />
 `;
