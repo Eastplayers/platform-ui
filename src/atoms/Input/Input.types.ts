@@ -1,9 +1,9 @@
 import { DetailedHTMLProps, InputHTMLAttributes } from "react";
 
 export interface InputProps
-  extends DetailedHTMLProps<
-    InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
+  extends Omit<
+    DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+    "size"
   > {
   label?: string;
   size?: InputSizes;

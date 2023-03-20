@@ -16,6 +16,7 @@ export default [
       format: "es",
       dir: "lib",
     },
+    external: ["react/jsx-runtime"],
     plugins: [
       json(),
       typescript(),
