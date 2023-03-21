@@ -1,8 +1,8 @@
 import classNames from "classnames";
-import React, { FC } from "react";
-import { InputProps } from "./Input.types";
-import "./Input.scss";
+import { FC } from "react";
 import Text from "../Text";
+import "./Input.scss";
+import { InputProps } from "./Input.types";
 
 const Input: FC<InputProps> = ({ label, className, error, size, ...rest }) => {
   return (

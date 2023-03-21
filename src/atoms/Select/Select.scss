@@ -1,0 +1,97 @@
+@import "../../styles/main.scss";
+
+.pui-field {
+  &.lg {
+    .pui-select__control {
+      height: pxToRem(48);
+    }
+  }
+
+  .pui-input-label {
+    margin-bottom: pxToRem(4);
+    font-size: pxToRem(14);
+    line-height: pxToRem(17);
+  }
+
+  .pui-select__control {
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: pxToRem(8);
+    font-size: pxToRem(14);
+    line-height: pxToRem(17);
+    box-shadow: none;
+    cursor: pointer;
+    transition: border-color 0.25s ease-in-out;
+    color: var(--text-primary);
+
+    &.pui-select__control--is-disabled {
+      background-color: var(--input-disabled-bg);
+      cursor: not-allowed;
+      color: var(--input-disabled-text);
+    }
+
+    &.pui-select__control--is-focused,
+    &:hover {
+      border-color: var(--primary);
+    }
+
+    .pui-select__value-container {
+      .pui-select__placeholder {
+        color: var(--input-placeholder);
+      }
+
+      .pui-select__multi-value {
+        background: var(--grey-50);
+        border-radius: pxToRem(4);
+
+        .pui-select__multi-value__label {
+          color: var(--grey-500);
+        }
+
+        .pui-select__multi-value__remove {
+          color: var(--grey-500);
+
+          &:hover {
+            background: transparent;
+            color: var(--grey-500);
+          }
+        }
+      }
+    }
+
+    .pui-select__indicators {
+      .pui-select__indicator-separator {
+        display: none;
+      }
+    }
+  }
+
+  .pui-select__menu {
+    box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.08);
+    border-radius: pxToRem(8);
+
+    .pui-select__menu-list {
+      .pui-select__option {
+        font-size: pxToRem(14);
+        line-height: pxToRem(17);
+        color: var(--select-option);
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+
+        &.pui-select__option--is-focused {
+          background: white;
+        }
+
+        &.pui-select__option--is-selected {
+          background: white;
+          color: var(--primary);
+          font-weight: 600;
+        }
+
+        &:hover {
+          background: var(--select-option-hover-bg);
+        }
+      }
+    }
+  }
+}
