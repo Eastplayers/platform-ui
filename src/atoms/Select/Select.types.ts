@@ -4,7 +4,11 @@ import { Sizes } from "types/common";
 export interface SelectProps
   extends Omit<
     StateManagedSelect,
-    "isMulti" | "isDisabled" | "isClearable" | "isSearchable"
+    | "isMulti"
+    | "isDisabled"
+    | "isClearable"
+    | "isSearchable"
+    | "classNamePrefix"
   > {
   label?: string;
   error?: string;

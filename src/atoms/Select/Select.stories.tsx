@@ -11,10 +11,10 @@ export default {
   component: SelectComponent,
   args: {
     label: "Label",
-    options: [
-      { label: "Option 1", value: "option-1" },
-      { label: "Option 2", value: "option-2" },
-    ],
+    options: [...new Array(10)].map((_, index) => ({
+      label: `Option ${index + 1}`,
+      value: `option-${index + 1}`,
+    })),
     placeholder: "Select an option",
     disabled: false,
     multiple: false,

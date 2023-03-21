@@ -3,7 +3,7 @@
 .pui-field {
   &.lg {
     .pui-select__control {
-      height: pxToRem(48);
+      min-height: pxToRem(48);
     }
   }
 
@@ -23,6 +23,7 @@
     cursor: pointer;
     transition: border-color 0.25s ease-in-out;
     color: var(--text-primary);
+    min-height: pxToRem(40);
 
     &.pui-select__control--is-disabled {
       background-color: var(--input-disabled-bg);

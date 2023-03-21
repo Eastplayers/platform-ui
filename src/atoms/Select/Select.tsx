@@ -22,6 +22,8 @@ const Select: FC<SelectProps> = ({
         isSearchable={searchable}
         isDisabled={disabled}
         isMulti={multiple}
+        closeMenuOnSelect={!multiple}
+        closeMenuOnScroll
         {...rest}
         classNamePrefix="pui-select"
       />
