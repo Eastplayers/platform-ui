@@ -5,6 +5,22 @@ on:
     branches: [master]
 
 jobs:
+  chromatic-deployment:
+    # Operating System
+    runs-on: ubuntu-latest
+    # Job steps
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install dependencies
+        # 👇 Install dependencies with the same package manager used in the project (replace it as needed), e.g. yarn, npm, pnpm
+        run: yarn
+        # 👇 Adds Chromatic as a step in the workflow
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        # Chromatic GitHub Action options
+        with:
+          # 👇 Chromatic projectToken, refer to the manage page to obtain it.
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
   build_push_deploy:
     env:
       IMAGE_NAME: "eastplayers/${{ github.event.repository.name }}"
@@ -37,7 +53,7 @@ jobs:
           file: ./Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags:  |
+          tags: |
             ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
             ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG_LATEST }}
           build-args: |
@@ -46,7 +62,7 @@ jobs:
         run: echo ${{ steps.docker_build.outputs.digest }}
 
       - name: Dump github context
-        run:   echo "$GITHUB_CONTEXT"
+        run: echo "$GITHUB_CONTEXT"
         shell: bash
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
@@ -61,7 +77,7 @@ jobs:
 
       - name: Update image tag
         run: kubectl set image -n ${{ env.NAMESPACE }} deployment/${{ env.DEPLOYMENT }} ${{ env.CONTAINER_NAME }}=${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
-      
+
       - name: Rollout
         run: kubectl rollout restart deployment ${{ env.DEPLOYMENT }} -n ${{ env.NAMESPACE }}
 
