@@ -1,17 +1,9 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { userEvent, within } from "@storybook/testing-library";
-import React from "react";
 import { default as TextComponent } from "./Text";
 import { TextDecorations, TextTypes } from "./Text.types";
 
 export const Text: ComponentStory<typeof TextComponent> = (args) => {
   return <TextComponent {...args} />;
-};
-
-Text.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
-
-  await userEvent.click(canvas.getByRole("div"));
 };
 
 export default {

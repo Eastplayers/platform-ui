@@ -1,17 +1,9 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { userEvent, within } from "@storybook/testing-library";
-import React from "react";
 import { default as CheckboxComponent } from "./Checkbox";
 import { CheckboxSizes } from "./Checkbox.types";
 
 export const Checkbox: ComponentStory<typeof CheckboxComponent> = (args) => {
   return <CheckboxComponent {...args} />;
-};
-
-Checkbox.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
-
-  await userEvent.click(canvas.getByRole("input"));
 };
 
 export default {

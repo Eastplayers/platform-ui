@@ -18,7 +18,8 @@
     "postversion": "git push && git push --tags",
     "sb": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "pre-publish": "yarn test"
+    "pre-publish": "yarn test",
+    "chromatic": "npx chromatic --project-token=506295bf4a20"
   },
   "husky": {
     "hooks": {
@@ -30,7 +31,11 @@
     "Platform",
     "UI"
   ],
-  "author": "Eastplayers <hello@eastplayers.io> (https://github.com/Eastplayers)",
+  "author": {
+    "name": "Eastplayers",
+    "email": "hello@eastplayers.io",
+    "url": "https://github.com/Eastplayers"
+  },
   "license": "ISC",
   "repository": {
     "type": "git",
@@ -59,6 +64,7 @@
     "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.28",
     "babel-loader": "^8.3.0",
+    "chromatic": "^6.17.2",
     "eslint": "^8.34.0",
     "fs": "^0.0.1-security",
     "husky": "^8.0.3",
@@ -105,5 +111,7 @@
   "directories": {
     "lib": "lib",
     "test": "test"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "@eastplayers/platform-ui@1.0.3"
 }
