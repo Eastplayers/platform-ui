@@ -4,40 +4,40 @@ exports[`Button snapshot snapshots Should render correctly 1`] = `
 <button
   0={
     {
-      "size": "medium",
+      "size": "base",
       "variant": "primary",
     }
   }
   1={
     {
-      "size": "big",
+      "size": "lg",
       "variant": "primary",
     }
   }
   2={
     {
-      "size": "medium",
+      "size": "base",
       "variant": "secondary",
     }
   }
   3={
     {
-      "size": "big",
+      "size": "lg",
       "variant": "secondary",
     }
   }
   4={
     {
-      "size": "medium",
+      "size": "base",
       "variant": "ghost",
     }
   }
   5={
     {
-      "size": "big",
+      "size": "lg",
       "variant": "ghost",
     }
   }
-  className="pui-btn pui-btn-primary pui-btn-medium"
+  className="pui-btn pui-btn-primary pui-btn-base"
 />
 `;

@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { FC } from "react";
 import "./Button.scss";
-import { ButtonProps, ButtonSizes, ButtonVariants } from "./Button.types";
+import { ButtonProps } from "./Button.types";
 
 const Button: FC<ButtonProps> = ({
   children,
@@ -26,8 +26,8 @@ const Button: FC<ButtonProps> = ({
 };
 
 Button.defaultProps = {
-  variant: ButtonVariants.PRIMARY,
-  size: ButtonSizes.MEDIUM,
+  variant: "primary",
+  size: "base",
 };
 
 export default Button;

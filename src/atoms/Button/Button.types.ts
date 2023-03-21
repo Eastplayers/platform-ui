@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from "react";
+import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 
 export interface ButtonProps
   extends DetailedHTMLProps<
@@ -11,13 +11,8 @@ export interface ButtonProps
   loading?: boolean;
 }
 
-export enum ButtonSizes {
-  BIG = "big",
-  MEDIUM = "medium",
-}
+export const Sizes = ["base", "lg"] as const;
+export type ButtonSizes = (typeof Sizes)[number];
 
-export enum ButtonVariants {
-  PRIMARY = "primary",
-  SECONDARY = "secondary",
-  GHOST = "ghost",
-}
+export const Variants = ["primary", "secondary", "ghost"] as const;
+export type ButtonVariants = (typeof Variants)[number];

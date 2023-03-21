@@ -1,4 +1,4 @@
-@import "../../styles/main.scss";
+@import "../../styles/main";
 
 .pui-btn {
   // $self: &;
@@ -18,7 +18,7 @@
     cursor: not-allowed;
   }
 
-  &.pui-btn-big {
+  &.pui-btn-lg {
     height: pxToRem(48);
     font-size: pxToRem(16);
     line-height: pxToRem(19);

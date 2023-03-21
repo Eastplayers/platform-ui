@@ -9,7 +9,7 @@ import scss from "rollup-plugin-scss";
 
 export default [
   {
-    input: "src/index.tsx",
+    input: "src/index.ts",
     output: {
       name: "@eastplayers/platform-ui",
       file: pkg.browser,

@@ -1,6 +1,6 @@
 {
   "name": "@eastplayers/platform-ui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Platform UI",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -17,7 +17,8 @@
     "version": "yarn format && git add -A src",
     "postversion": "git push && git push --tags",
     "sb": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "pre-publish": "yarn test"
   },
   "husky": {
     "hooks": {
@@ -77,6 +78,10 @@
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.9.5"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "files": [
     "lib/**/*"

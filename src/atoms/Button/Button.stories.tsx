@@ -1,8 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
-import React from "react";
 import { default as ButtonComponent } from "./Button";
-import { ButtonSizes, ButtonVariants } from "./Button.types";
+import { Sizes, Variants } from "./Button.types";
 
 export const Button: ComponentStory<typeof ButtonComponent> = (args) => {
   return <ButtonComponent {...args}>Button</ButtonComponent>;
@@ -18,17 +17,17 @@ export default {
   title: "Platform UI/Atoms/Button",
   component: ButtonComponent,
   args: {
-    variant: ButtonVariants.PRIMARY,
-    size: ButtonSizes.MEDIUM,
+    variant: "primary",
+    size: "base",
     disabled: false,
   },
   argTypes: {
     variant: {
-      options: Object.values(ButtonVariants),
+      options: Sizes,
       control: { type: "radio" },
     },
     size: {
-      options: Object.values(ButtonSizes),
+      options: Variants,
       control: { type: "radio" },
     },
     disabled: {
