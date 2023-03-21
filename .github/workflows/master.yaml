@@ -21,7 +21,7 @@ jobs:
         with:
           # 👇 Chromatic projectToken, refer to the manage page to obtain it.
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-  build_push_deploy:
+  storybook-deployment:
     env:
       IMAGE_NAME: "eastplayers/${{ github.event.repository.name }}"
       IMAGE_TAG: "production-0.1.${{github.run_number}}"
