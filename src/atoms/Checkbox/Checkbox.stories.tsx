@@ -12,6 +12,7 @@ export default {
   args: {
     size: CheckboxSizes.MEDIUM,
     disabled: false,
+    label: "Sample checkbox",
   },
   argTypes: {
     size: {

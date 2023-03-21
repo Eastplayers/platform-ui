@@ -1,10 +1,11 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
+import { SizeArr } from "../../types/common";
 import { default as ButtonComponent } from "./Button";
-import { Sizes, Variants } from "./Button.types";
+import { Variants } from "./Button.types";
 
 export const Button: ComponentStory<typeof ButtonComponent> = (args) => {
-  return <ButtonComponent {...args}>Button</ButtonComponent>;
+  return <ButtonComponent {...args}>Sample button</ButtonComponent>;
 };
 
 Button.play = async ({ canvasElement }) => {
@@ -23,7 +24,7 @@ export default {
   },
   argTypes: {
     variant: {
-      options: Sizes,
+      options: SizeArr,
       control: { type: "radio" },
     },
     size: {

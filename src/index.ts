@@ -1,4 +1,4 @@
-import "./styles/_main.scss";
+import "./styles/main.scss";
 
 export * from "./atoms/Button/Button.types";
 export { default as Button } from "./atoms/Button";

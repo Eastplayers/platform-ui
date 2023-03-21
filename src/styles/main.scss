@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@import "./abstracts/main";
+
+body {
+  --primary: #364de7;
+  --primary-dark: #2b3eb9;
+  --white: #ffffff;
+  --black: #000000;
+
+  --text-primary: #202225;
+
+  --card-bg: #ffffff;
+  --card-box-shadow: 0px pxToRem(4) pxToRem(32) rgba(0, 0, 0, 0.08);
+
+  --input-border: var(--grey-100);
+  --input-bg: var(--white);
+  --input-disabled-bg: var(--grey-50);
+  --input-disabled-text: var(--grey-200);
+  --input-placeholder: var(--grey-300);
+
+  --grey-50: #f2f3f5;
+  --grey-100: #d6dae1;
+  --grey-200: #c4c9d2;
+  --grey-300: #a3a9b3;
+  --grey-400: #7d828b;
+  --grey-500: #5c6169;
+  --grey-600: #36393f;
+  --grey-700: #2c2e33;
+  --grey-800: #202225;
+  --grey-900: #17181a;
+
+  --accent-yellow: #ffb130;
+  --accent-orange: #fc8b23;
+  --accent-green: #3ba55c;
+  --accent-blue: #3e70dd;
+  --accent-violet: #702dff;
+  --accent-red: #ed4245;
+
+  font-family: "Inter", sans-serif;
+}
+
+// @media (prefers-color-scheme: dark) {
+//   body {
+//     --text-primary: #ffffff;
+
+//     --card-bg: #36393f;
+//     --card-box-shadow: 0px pxToRem(4) pxToRem(32) rgba(0, 0, 0, 0.25);
+//   }
+// }
+
+// @media (prefers-color-scheme: dark) {
+//   html {
+//     color-scheme: dark;
+//   }
+// }

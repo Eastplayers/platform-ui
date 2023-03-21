@@ -1,4 +1,4 @@
-@import "../../styles/abstracts/main";
+@import "../../styles/main.scss";
 
 .pui-field {
   display: flex;
@@ -21,6 +21,10 @@
     color: var(--text-primary);
     background-color: var(--input-bg);
     font-family: "Inter", sans-serif;
+
+    &.lg {
+      height: pxToRem(48);
+    }
 
     &:disabled {
       background-color: var(--input-disabled-bg);

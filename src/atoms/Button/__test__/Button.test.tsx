@@ -1,16 +1,17 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { SizeArr } from "../../../types/common";
 import { testSnapshots } from "../../../utils/snapTest";
 import Button from "../Button";
-import { ButtonProps, Sizes, Variants } from "../Button.types";
+import { ButtonProps, Variants } from "../Button.types";
 
 const buttonOnClick = jest.fn();
 
 const buttonProps: ButtonProps[] = [];
 
 Variants.forEach((variant) => {
-  Sizes.forEach((size) => buttonProps.push({ variant, size }));
+  SizeArr.forEach((size) => buttonProps.push({ variant, size }));
 });
 
 describe("Button snapshot", () => {

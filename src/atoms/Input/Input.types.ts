@@ -1,4 +1,5 @@
 import { DetailedHTMLProps, InputHTMLAttributes } from "react";
+import { Sizes } from "../../types/common";
 
 export interface InputProps
   extends Omit<
@@ -6,11 +7,6 @@ export interface InputProps
     "size"
   > {
   label?: string;
-  size?: InputSizes;
+  size?: Sizes;
   error?: string;
-}
-
-export enum InputSizes {
-  BIG = "big",
-  MEDIUM = "medium",
 }
