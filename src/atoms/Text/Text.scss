@@ -53,6 +53,13 @@
     line-height: pxToRem(15);
   }
 
+  $aligns: left, center, right, justify;
+  @each $align in $aligns {
+    &.#{$align} {
+      text-align: $align;
+    }
+  }
+
   $decorations: none, underline, line-through;
   @each $decoration in $decorations {
     &.#{$decoration} {

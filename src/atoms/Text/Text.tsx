@@ -1,19 +1,30 @@
-import React, { FC } from "react";
-import { TextProps, TextTypes } from "./Text.types";
-import "./Text.scss";
 import classNames from "classnames";
+import { FC } from "react";
+import "./Text.scss";
+import { TextProps, TextTypes } from "./Text.types";
 
 const Text: FC<TextProps> = ({
   children,
-  type = TextTypes.BODY_2,
+  type,
   className,
   decoration,
+  align,
+  color,
 }) => {
   return (
-    <div className={classNames("pui-text", type, decoration, className)}>
+    <div
+      className={classNames("pui-text", type, decoration, align, className)}
+      style={{ color }}
+    >
       {children}
     </div>
   );
+};
+
+Text.defaultProps = {
+  type: "body-2",
+  decoration: "none",
+  align: "left",
 };
 
 export default Text;

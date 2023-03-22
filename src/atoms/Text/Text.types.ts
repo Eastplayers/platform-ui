@@ -5,21 +5,24 @@ export interface TextProps {
   className?: string;
   type?: TextTypes;
   decoration?: TextDecorations;
+  color?: string;
+  align?: TextAligns;
 }
 
-export enum TextTypes {
-  HEADLINE_4 = "headline-4",
-  HEADLINE_5 = "headline-5",
-  TITLE_1 = "title-1",
-  TITLE_2 = "title-2",
-  TITLE_3 = "title-3",
-  BODY_1 = "body-1",
-  BODY_2 = "body-2",
-  BODY_3 = "body-3",
-}
+export const Aligns = ["left", "center", "right", "justify"] as const;
+export type TextAligns = (typeof Aligns)[number];
 
-export enum TextDecorations {
-  NONE = "none",
-  UNDERLINE = "underline",
-  LINE_THROUGH = "line-through",
-}
+export const Types = [
+  "headline-4",
+  "headline-5",
+  "title-1",
+  "title-2",
+  "title-3",
+  "body-1",
+  "body-2",
+  "body-3",
+] as const;
+export type TextTypes = (typeof Types)[number];
+
+export const Decorations = ["none", "underline", "line-through"] as const;
+export type TextDecorations = (typeof Decorations)[number];

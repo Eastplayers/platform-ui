@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { default as TextComponent } from "./Text";
-import { TextDecorations, TextTypes } from "./Text.types";
+import { Decorations, Types } from "./Text.types";
 
 export const Text: ComponentStory<typeof TextComponent> = (args) => {
   return <TextComponent {...args} />;
@@ -10,17 +10,17 @@ export default {
   title: "Platform UI/Atoms/Text",
   component: TextComponent,
   args: {
-    type: TextTypes.BODY_2,
+    type: "body-2",
     children: "Sample text",
-    decoration: TextDecorations.NONE,
+    decoration: "none",
   },
   argTypes: {
     type: {
-      options: Object.values(TextTypes),
+      options: Types,
       control: { type: "select" },
     },
     decoration: {
-      options: Object.values(TextDecorations),
+      options: Decorations,
       control: { type: "select" },
     },
     children: { control: { type: "text" } },
