@@ -1,10 +1,10 @@
-import { FC } from "react";
-import { SelectProps } from "./Select.types";
-import { default as ReactSelect } from "react-select";
-import "./Select.scss";
 import classNames from "classnames";
-import Text from "../Text";
+import { FC } from "react";
+import { default as ReactSelect } from "react-select";
 import { Colors } from "../../theme";
+import Text from "../Text";
+import "./Select.scss";
+import { SelectProps } from "./Select.types";
 
 const Select: FC<SelectProps> = ({
   label,

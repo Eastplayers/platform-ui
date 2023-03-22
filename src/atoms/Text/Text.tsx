@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { FC } from "react";
 import "./Text.scss";
-import { TextProps, TextTypes } from "./Text.types";
+import { TextProps } from "./Text.types";
 
 const Text: FC<TextProps> = ({
   children,
