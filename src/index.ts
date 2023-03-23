@@ -1,4 +1,5 @@
 import "./styles/main.scss";
+export * from "./theme";
 
 export { default as Avatar } from "./atoms/Avatar";
 export { default as Button } from "./atoms/Button";
