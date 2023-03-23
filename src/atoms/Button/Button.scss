@@ -1,8 +1,17 @@
 @import "../../styles/main.scss";
 
 .pui-btn {
+  --btn-primary: var(--primary);
+  --btn-primary-dark: var(--primary-dark);
+
+  --btn-bg: var(--btn-primary);
+  --btn-text: var(--white);
+  --btn-hover-text: var(--white);
+  --btn-border: var(--btn-primary);
+  --btn-hover-bg: var(--btn-primary-dark);
+
   border: none;
-  height: pxToRem(40);
+  height: pxToRem(37);
   padding: 0 pxToRem(12);
   font-weight: 600;
   font-size: pxToRem(14);
@@ -12,58 +21,48 @@
   transition: all 0.25s ease-in-out;
   will-change: background;
   outline: none;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: 1.5px solid var(--btn-border);
+
+  &:hover {
+    background: var(--btn-hover-bg);
+    color: var(--btn-hover-text);
+  }
 
   &:disabled {
     cursor: not-allowed;
+    opacity: 0.5;
   }
 
   &.pui-btn-lg {
-    height: pxToRem(48);
+    height: pxToRem(45);
     font-size: pxToRem(16);
     line-height: pxToRem(19);
   }
 
-  &.pui-btn-primary {
-    background: var(--primary);
-    color: var(--white);
+  &.pui-btn-outline {
+    --btn-bg: transparent;
+    --btn-text: var(--btn-primary);
+    --btn-hover-bg: var(--btn-primary);
+    --btn-hover-text: var(--white);
+  }
 
-    &:hover {
-      background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-        var(--primary);
-    }
-
-    &:disabled {
-      background: var(--grey-400);
-      color: var(--grey-100);
-    }
+  &.pui-btn-borderless {
+    --btn-bg: transparent;
+    --btn-text: var(--btn-primary);
+    --btn-hover-bg: rgba(23, 24, 26, 0.08);
+    --btn-hover-text: var(--btn-primary-dark);
+    --btn-border: transparent;
   }
 
   &.pui-btn-secondary {
-    border: 1.5px solid var(--primary);
-    color: var(--primary);
-    background: transparent;
-
-    &:hover {
-      background: var(--primary);
-      color: var(--white);
-    }
-
-    &:disabled {
-      border-color: var(--grey-400);
-      color: var(--grey-400);
-    }
+    --btn-primary: var(--grey-900);
+    --btn-primary-dark: var(--grey-900);
   }
 
-  &.pui-btn-ghost {
-    color: var(--primary);
-    background: transparent;
-
-    &:hover {
-      color: var(--primary-dark);
-    }
-
-    &:disabled {
-      color: var(--grey-400);
-    }
+  &.pui-btn-danger {
+    --btn-primary: var(--accent-red);
+    --btn-primary-dark: var(--accent-red);
   }
 }

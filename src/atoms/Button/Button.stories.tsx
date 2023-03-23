@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import { SizeArr } from "../../types/common";
 import { default as ButtonComponent } from "./Button";
-import { Variants } from "./Button.types";
+import { Types, Variants } from "./Button.types";
 
 export const Button: ComponentStory<typeof ButtonComponent> = (args) => {
   return <ButtonComponent {...args}>Sample button</ButtonComponent>;
@@ -21,14 +21,19 @@ export default {
     variant: "primary",
     size: "base",
     disabled: false,
+    type: "default",
   },
   argTypes: {
     variant: {
-      options: SizeArr,
+      options: Variants,
+      control: { type: "radio" },
+    },
+    type: {
+      options: Types,
       control: { type: "radio" },
     },
     size: {
-      options: Variants,
+      options: SizeArr,
       control: { type: "radio" },
     },
     disabled: {

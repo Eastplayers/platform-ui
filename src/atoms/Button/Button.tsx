@@ -9,6 +9,8 @@ const Button: FC<ButtonProps> = ({
   size,
   loading,
   disabled,
+  type,
+  htmlType,
   ...rest
 }) => {
   return (
@@ -16,9 +18,11 @@ const Button: FC<ButtonProps> = ({
       disabled={disabled || loading}
       className={classNames("pui-btn", {
         [`pui-btn-${variant}`]: !!variant,
+        [`pui-btn-${type}`]: !!type,
         [`pui-btn-${size}`]: !!size,
       })}
       {...rest}
+      type={htmlType}
     >
       {children}
     </button>
@@ -28,6 +32,7 @@ const Button: FC<ButtonProps> = ({
 Button.defaultProps = {
   variant: "primary",
   size: "base",
+  type: "default",
 };
 
 export default Button;
