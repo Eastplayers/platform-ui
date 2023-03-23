@@ -1,6 +1,6 @@
 {
   "name": "@eastplayers/platform-ui",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Platform UI",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -14,7 +14,7 @@
     "build:tsc": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
-    "version": "yarn format && git add -A src",
+    "version": "yarn build && yarn format && git add -A src",
     "postversion": "git push && git push --tags",
     "sb": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
