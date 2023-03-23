@@ -1,0 +1,53 @@
+@import "../../styles/main.scss";
+
+.pui-field {
+  display: flex;
+  flex-direction: column;
+  gap: pxToRem(4);
+
+  .pui-input-label {
+    margin-bottom: pxToRem(4);
+  }
+
+  .pui-input {
+    border: 1px solid var(--input-border);
+    border-radius: pxToRem(8);
+    height: pxToRem(40);
+    padding: pxToRem(8);
+    font-size: pxToRem(14);
+    line-height: pxToRem(17);
+    outline: none;
+    transition: border-color 0.25s ease-in-out;
+    color: var(--text-primary);
+    background-color: var(--input-bg);
+    font-family: "Inter", sans-serif;
+    min-height: pxToRem(120);
+
+    &.lg {
+      height: pxToRem(48);
+    }
+
+    &:disabled {
+      background-color: var(--input-disabled-bg);
+      cursor: not-allowed;
+      color: var(--input-disabled-text);
+    }
+
+    &:focus {
+      border-color: var(--primary);
+    }
+
+    &::placeholder {
+      color: var(--input-placeholder);
+      font-size: pxToRem(14);
+      line-height: pxToRem(17);
+    }
+  }
+
+  .pui-input-error {
+    font-size: pxToRem(12);
+    line-height: pxToRem(15);
+    color: var(--accent-red);
+    padding-left: pxToRem(8);
+  }
+}
