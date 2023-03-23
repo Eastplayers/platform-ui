@@ -4,11 +4,14 @@
   border-radius: 100%;
   object-fit: cover;
   object-position: center;
-  background-color: var(--grey-50);
   color: var(--grey-500);
   display: flex;
   align-items: center;
   justify-content: center;
   user-select: none;
   font-weight: 600;
+
+  &.blank {
+    background-color: var(--grey-50);
+  }
 }

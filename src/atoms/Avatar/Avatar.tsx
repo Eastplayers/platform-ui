@@ -14,7 +14,7 @@ const Avatar: FC<AvatarProps> = ({
   if (!src) {
     return (
       <div
-        className={classNames("pui-avatar", className)}
+        className={classNames("pui-avatar blank", className)}
         style={{
           width: size,
           height: size,
