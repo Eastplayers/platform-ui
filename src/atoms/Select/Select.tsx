@@ -4,6 +4,7 @@ import { default as ReactSelect, Props } from "react-select";
 import { Colors } from "../../theme";
 import Text from "../Text";
 import "./Select.scss";
+import { SelectProps } from "./Select.types";
 
 const Select: FC<
   Omit<
@@ -13,7 +14,8 @@ const Select: FC<
     | "isClearable"
     | "isSearchable"
     | "classNamePrefix"
-  >
+  > &
+    SelectProps
 > = ({
   label,
   error,
