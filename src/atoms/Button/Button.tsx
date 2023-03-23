@@ -11,12 +11,13 @@ const Button: FC<ButtonProps> = ({
   disabled,
   type,
   htmlType,
+  className,
   ...rest
 }) => {
   return (
     <button
       disabled={disabled || loading}
-      className={classNames("pui-btn", {
+      className={classNames("pui-btn", className, {
         [`pui-btn-${variant}`]: !!variant,
         [`pui-btn-${type}`]: !!type,
         [`pui-btn-${size}`]: !!size,

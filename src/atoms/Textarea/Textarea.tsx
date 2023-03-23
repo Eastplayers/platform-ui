@@ -12,7 +12,7 @@ const Textarea: FC<TextareaProps> = ({
   ...rest
 }) => {
   return (
-    <div className={classNames("pui-field")}>
+    <div className={classNames("pui-textarea")}>
       {label && (
         <label className="pui-input-label">
           <Text>{label}</Text>

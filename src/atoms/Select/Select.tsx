@@ -1,12 +1,20 @@
 import classNames from "classnames";
 import { FC } from "react";
-import { default as ReactSelect } from "react-select";
+import { default as ReactSelect, Props } from "react-select";
 import { Colors } from "../../theme";
 import Text from "../Text";
 import "./Select.scss";
-import { SelectProps } from "./Select.types";
 
-const Select: FC<SelectProps> = ({
+const Select: FC<
+  Omit<
+    Props,
+    | "isMulti"
+    | "isDisabled"
+    | "isClearable"
+    | "isSearchable"
+    | "classNamePrefix"
+  >
+> = ({
   label,
   error,
   multiple,

@@ -1,7 +1,7 @@
 import classNames from "classnames";
-import React, { FC } from "react";
-import { CheckboxProps, CheckboxSizes } from "./Checkbox.types";
+import { FC } from "react";
 import "./Checkbox.scss";
+import { CheckboxProps, CheckboxSizes } from "./Checkbox.types";
 
 const Checkbox: FC<CheckboxProps> = ({
   label,
