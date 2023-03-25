@@ -7,5 +7,6 @@ export interface SelectProps {
   disabled?: boolean;
   clearable?: boolean;
   searchable?: boolean;
+  creatable?: boolean;
   size?: Sizes;
 }
