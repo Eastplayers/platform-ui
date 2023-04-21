@@ -19,10 +19,11 @@
     align-items: center;
     border-radius: pxToRem(8);
     position: relative;
-    overflow: hidden;
 
     .pui-select-prefix {
       padding-left: pxToRem(8);
+      display: flex;
+      align-items: center;
     }
 
     .pui-select {
@@ -42,6 +43,7 @@
     min-height: pxToRem(40);
     border: none;
     position: unset;
+    border-radius: pxToRem(8);
 
     &.pui-select__control--is-disabled {
       background-color: var(--input-disabled-bg);
