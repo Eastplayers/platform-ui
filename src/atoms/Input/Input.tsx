@@ -4,7 +4,15 @@ import Text from "../Text";
 import "./Input.scss";
 import { InputProps } from "./Input.types";
 
-const Input: FC<InputProps> = ({ label, className, error, size, ...rest }) => {
+const Input: FC<InputProps> = ({
+  label,
+  className,
+  error,
+  size,
+  prefix,
+  suffix,
+  ...rest
+}) => {
   return (
     <div className={classNames("pui-field")}>
       {label && (
@@ -12,7 +20,11 @@ const Input: FC<InputProps> = ({ label, className, error, size, ...rest }) => {
           <Text>{label}</Text>
         </label>
       )}
-      <input className={classNames("pui-input", size, className)} {...rest} />
+      <div className={classNames("pui-input", size, className)}>
+        {!!prefix && prefix}
+        <input {...rest} />
+        {!!suffix && suffix}
+      </div>
       {error && <span className="pui-input-error">{error}</span>}
     </div>
   );

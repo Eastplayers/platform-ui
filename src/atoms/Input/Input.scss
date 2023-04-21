@@ -12,15 +12,32 @@
   .pui-input {
     border: 1px solid var(--input-border);
     border-radius: pxToRem(8);
-    height: pxToRem(40);
-    padding: 0 pxToRem(8);
-    font-size: pxToRem(14);
     line-height: pxToRem(17);
     outline: none;
     transition: border-color 0.25s ease-in-out;
-    color: var(--text-primary);
     background-color: var(--input-bg);
     font-family: "Inter", sans-serif;
+    display: flex;
+    overflow: hidden;
+    gap: 0.5rem;
+    padding: 0 pxToRem(8);
+    align-items: center;
+
+    input {
+      flex: 1;
+      color: var(--text-primary);
+      height: pxToRem(40);
+      font-size: pxToRem(14);
+      border: none;
+      border-radius: pxToRem(8);
+      outline: none;
+
+      &::placeholder {
+        color: var(--input-placeholder);
+        font-size: pxToRem(14);
+        line-height: pxToRem(17);
+      }
+    }
 
     &.lg {
       height: pxToRem(48);
@@ -32,14 +49,8 @@
       color: var(--input-disabled-text);
     }
 
-    &:focus {
+    &:focus-within {
       border-color: var(--primary);
-    }
-
-    &::placeholder {
-      color: var(--input-placeholder);
-      font-size: pxToRem(14);
-      line-height: pxToRem(17);
     }
   }
 
