@@ -26,9 +26,11 @@ const Select: FC<
   searchable,
   creatable,
   size,
+  suffix,
+  prefix,
   ...rest
 }) => {
-  const CustomSelect = (props: any) => {
+  const CustomSelect = (props: Props) => {
     if (creatable) {
       return <CreatableSelect {...props} />;
     }
@@ -39,17 +41,21 @@ const Select: FC<
   return (
     <div className={classNames("pui-field", size)}>
       {label && <label className="pui-input-label">{label}</label>}
-      <CustomSelect
-        isClearable={clearable}
-        isSearchable={searchable}
-        isDisabled={disabled}
-        isMulti={multiple}
-        closeMenuOnSelect={!multiple}
-        closeMenuOnScroll
-        {...rest}
-        classNamePrefix="pui-select"
-        noOptionsMessage={() => <Text color={Colors.GREY_300}>None</Text>}
-      />
+      <div className="pui-select-container">
+        {!!prefix && <div className="pui-select-prefix">{prefix}</div>}
+        <CustomSelect
+          className="pui-select"
+          isClearable={clearable}
+          isSearchable={searchable}
+          isDisabled={disabled}
+          isMulti={multiple}
+          closeMenuOnSelect={!multiple}
+          closeMenuOnScroll
+          {...rest}
+          classNamePrefix="pui-select"
+          noOptionsMessage={() => <Text color={Colors.GREY_300}>None</Text>}
+        />
+      </div>
       {error && <span className="pui-input-error">{error}</span>}
     </div>
   );

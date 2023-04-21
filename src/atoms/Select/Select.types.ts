@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { Sizes } from "types/common";
 
 export interface SelectProps {
@@ -9,4 +10,6 @@ export interface SelectProps {
   searchable?: boolean;
   creatable?: boolean;
   size?: Sizes;
+  suffix?: ReactNode;
+  prefix?: ReactNode;
 }

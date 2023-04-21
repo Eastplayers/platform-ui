@@ -13,10 +13,26 @@
     line-height: pxToRem(17);
   }
 
+  .pui-select-container {
+    border: 1px solid var(--input-border);
+    display: flex;
+    align-items: center;
+    border-radius: pxToRem(8);
+    position: relative;
+    overflow: hidden;
+
+    .pui-select-prefix {
+      padding-left: pxToRem(8);
+    }
+
+    .pui-select {
+      flex: 1;
+      position: unset;
+    }
+  }
+
   .pui-select__control {
     background-color: var(--input-bg);
-    border: 1px solid var(--input-border);
-    border-radius: pxToRem(8);
     font-size: pxToRem(14);
     line-height: pxToRem(17);
     box-shadow: none;
@@ -24,6 +40,8 @@
     transition: border-color 0.25s ease-in-out;
     color: var(--text-primary);
     min-height: pxToRem(40);
+    border: none;
+    position: unset;
 
     &.pui-select__control--is-disabled {
       background-color: var(--input-disabled-bg);
@@ -70,6 +88,7 @@
   .pui-select__menu {
     box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.08);
     border-radius: pxToRem(8);
+    left: 0;
 
     .pui-select__menu-list {
       .pui-select__option {
