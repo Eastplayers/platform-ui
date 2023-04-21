@@ -21,6 +21,13 @@ module.exports = {
       },
     },
     "storybook-dark-mode",
+    "@storybook/addon-mdx-gfm",
   ],
-  framework: "@storybook/react",
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: {},
+  },
+  docs: {
+    autodocs: true,
+  },
 };
