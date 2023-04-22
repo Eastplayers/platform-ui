@@ -1,11 +1,11 @@
-import { Button, ButtonVariants } from "@eastplayers/platform-ui";
+import { Button } from "@eastplayers/platform-ui";
 import "@eastplayers/platform-ui/lib/bundle.css";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Button variant={ButtonVariants.SECONDARY}>Hello</Button>
+      <Button>Hello</Button>
     </div>
   );
 }
