@@ -26,10 +26,8 @@ jobs:
       IMAGE_NAME: 'eastplayers/${{ github.event.repository.name }}'
       IMAGE_TAG: 'production-0.1.${{github.run_number}}'
       IMAGE_TAG_LATEST: 'production-latest'
-      HOSTING:  'host2'
-      CONTAINER: 'platform_ui_production'
 
-    runs-on: [self-hosted, worker]
+    runs-on: [self-hosted, production]
 
     steps:
       - name: Checkout
@@ -63,6 +61,7 @@ jobs:
 
       - name: Deploy
         run: |
-          cd ~/scripts
-          ./deploy_remote_${{  env.HOSTING  }}.sh ${{  env.CONTAINER  }}
+          cd ~/docker-config && \
+          docker compose pull platform_ui_production && \
+          docker compose up platform_ui_production -d 
         shell: bash
