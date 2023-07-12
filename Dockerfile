@@ -2,19 +2,19 @@ FROM node:19.8.1-alpine as builder
 
 WORKDIR /app
 
-COPY . ./
+COPY package.json yarn.lock ./
 
 RUN yarn
 
+COPY . .
+
 RUN yarn build
 
-FROM node:16.19.1-alpine
+FROM node:16.19.1-alpine as runner
+
+WORKDIR /app
 
 COPY --from=builder /app ./
-
-RUN pwd
-
-RUN ls -la
 
 EXPOSE 6006
 

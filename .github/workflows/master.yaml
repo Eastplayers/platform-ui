@@ -23,66 +23,46 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
   storybook-deployment:
     env:
-      IMAGE_NAME: "eastplayers/${{ github.event.repository.name }}"
-      IMAGE_TAG: "production-0.1.${{github.run_number}}"
-      IMAGE_TAG_LATEST: "production-latest"
-      NAMESPACE: "platform-ui-production"
-      DEPLOYMENT: "platform-ui-production"
-      CONTAINER_NAME: "platform-ui-production"
-    runs-on: ubuntu-latest
+      IMAGE_NAME: 'eastplayers/${{ github.event.repository.name }}'
+      IMAGE_TAG: 'production-0.1.${{github.run_number}}'
+      IMAGE_TAG_LATEST: 'production-latest'
+      HOSTING:  'host2'
+      CONTAINER: 'platform_ui_production'
+
+    runs-on: [self-hosted, worker]
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Login to Docker Hub
-        uses: docker/login-action@v1
+        uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-
-      - name: Setup Docker Buildx
-        id: buildx
-        uses: docker/setup-buildx-action@v1
-
-      - name: Build and Push Docker Image
-        id: docker_build
-        uses: docker/build-push-action@v2
-        with:
-          context: ./
-          file: ./Dockerfile
-          builder: ${{ steps.buildx.outputs.name }}
-          push: true
-          tags: |
-            ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
-            ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG_LATEST }}
-          build-args: |
-            "$PRODUCTION_ENV"
-      - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
-
-      - name: Dump github context
-        run: echo "$GITHUB_CONTEXT"
+        
+      - name: Build image
+        run: |
+          docker build -t ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG_LATEST }} .
+          docker build -t ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG}} .  
         shell: bash
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
 
-      - name: Install doctl
-        uses: digitalocean/action-doctl@v2
-        with:
-          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      - name: Push image
+        run: |
+          docker push ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG_LATEST }}
+          docker push ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG}}
+        shell: bash
 
-      - name: Save DigitalOcean kubeconfig production
-        run: doctl kubernetes cluster kubeconfig save ${{ secrets.DIGITALOCEAN_CLUSTER_PRODUCTION }}
+      - name: Clean disk space
+        run: |
+          rm -rf *
+          export TZ=Asia/Ho_Chi_Minh
+          echo "The job have completed at $(date)" > logs
+          docker rmi ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG_LATEST }}
+          docker rmi ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG}}
 
-      - name: Update image tag
-        run: kubectl set image -n ${{ env.NAMESPACE }} deployment/${{ env.DEPLOYMENT }} ${{ env.CONTAINER_NAME }}=${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
-
-      - name: Rollout
-        run: kubectl rollout restart deployment ${{ env.DEPLOYMENT }} -n ${{ env.NAMESPACE }}
-
-      - name: Actions Status Discord
-        if: always()
-        uses: sarisia/actions-status-discord@v1.8.6
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+      - name: Deploy
+        run: |
+          cd ~/scripts
+          ./deploy_remote_${{  env.HOSTING  }}.sh ${{  env.CONTAINER  }}
+        shell: bash
